@@ -4,7 +4,6 @@ import screenShot1_2x from '../../assets/screen1_2x@2x.png';
 import screenShot2_1x from '../../assets/screen2_1x.png';
 import screenShot2_2x from '../../assets/screen2_2x@2x.png';
 import { ReactComponent as AddScreenShot } from '../../assets/add-icon.svg';
-// import AddScreenShot from '../../assets/add-icon.png';
 
 import {
   StyledSection,
@@ -18,7 +17,6 @@ import {
   Picture,
   SubTextWrapper,
   ButtonAdd,
-  IconAdd,
 } from './Gallery.styled';
 
 const Gallery = () => {
@@ -40,9 +38,8 @@ const Gallery = () => {
                 />
               </Picture>
               <ButtonAdd>
-                <IconAdd />
+                <AddScreenShot />
               </ButtonAdd>
-              {/* <IconAdd /> */}
               <GalletySubTitle>screen shot #1</GalletySubTitle>
             </PictureWrapper>
             <SubTextWrapper>

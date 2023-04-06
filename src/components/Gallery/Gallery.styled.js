@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { ReactComponent as AddScreenShot } from '../../assets/add-icon.svg';
 
 export const StyledSection = styled.section`
   padding-top: 50px;
@@ -87,9 +86,4 @@ export const ButtonAdd = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
-`;
-
-export const IconAdd = styled(AddScreenShot)`
-  /* width: 20px;
-  height: 20px; */
 `;

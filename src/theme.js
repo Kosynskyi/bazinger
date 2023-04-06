@@ -19,24 +19,22 @@ export const theme = {
     droidSans: "'DroidSans', sans-serif",
     lato: "'Lato', sans-serif",
   },
-  //   fontSizes: {
-  //     xxs: '11px',
-  //     xs: '12px',
-  //     s: '14px',
-  //     m: '16px',
-  //     l: '18px',
-  //     xl: '20px',
-  //     xxl: '24px',
-  //     xxxl: '28px',
-  //     additional: '13px',
-  //   },
-  //   fontWeights: {
-  //     regular: 400,
-  //     medium: 500,
-  //     semiBold: 600,
-  //     bold: 700,
-  //     extraBold: 800,
-  //   },
+  fontSizes: {
+    xxs: '6px', //4.8pt
+    xs: '7px', //5.2pt
+    s: '8px', //5.6pt + 6pt
+    m: '10px', //7.2pt
+    l: '11px', //8pt
+    xl: '19px', //14.4pt
+    xxl: '26px', //19.2pt
+  },
+  fontWeights: {
+    regular: 400,
+    medium: 500,
+    semiBold: 600,
+    bold: 700,
+    extraBold: 800,
+  },
   //   lineHeights: {
   //     primary: 1.5,
   //     a: 1.19,
@@ -51,15 +49,14 @@ export const theme = {
   //     primary: 0.15,
   //     secondary: 0.25,
   //   },
-  //   borders: {
-  //     none: 'none',
-  //     small: '1px solid',
-  //     round: '50%',
-  //   },
-  //   radii: {
-  //     none: '0',
-  //     secondary: '5px',
-  //     primary: '10px',
-  //     round: '50%',
-  //   },
+  borders: {
+    none: 'none',
+    small: '1px solid',
+    round: '50%',
+  },
+  radii: {
+    none: '0',
+    primary: '5px',
+    round: '50%',
+  },
 };

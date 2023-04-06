@@ -1,3 +1,13 @@
+import Container from 'components/Container';
+import Logo from 'components/Logo';
+import {
+  StyledHeader,
+  NavList,
+  NavItem,
+  NavLink,
+  Thumb,
+} from './Header.styled';
+
 const Header = () => {
   const navigationList = [
     { id: 1, name: 'home' },
@@ -11,17 +21,22 @@ const Header = () => {
   ];
 
   return (
-    <>
-      <nav>
-        <ul>
-          {navigationList.map(({ id, name }) => (
-            <li key={id}>
-              <a href={`#${name}`}>{name.toUpperCase()}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </>
+    <StyledHeader>
+      <Container>
+        <Thumb>
+          <Logo />
+          <nav>
+            <NavList>
+              {navigationList.map(({ id, name }) => (
+                <NavItem key={id}>
+                  <NavLink href={`#${name}`}>{name.toUpperCase()}</NavLink>
+                </NavItem>
+              ))}
+            </NavList>
+          </nav>
+        </Thumb>
+      </Container>
+    </StyledHeader>
   );
 };
 

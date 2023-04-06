@@ -3,6 +3,8 @@ import Hero from './Hero';
 import Features from './Features';
 import Gallery from './Gallery';
 import Video from './Video';
+import Contact from './Contact';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -13,7 +15,9 @@ function App() {
         <Features />
         <Gallery />
         <Video />
+        <Contact />
       </main>
+      <Footer />
     </>
   );
 }

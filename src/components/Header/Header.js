@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import Container from 'components/Container';
 import Logo from 'components/Logo';
 import {
@@ -9,6 +11,8 @@ import {
 } from './Header.styled';
 
 const Header = () => {
+  const [active, setActive] = useState('home');
+
   const navigationList = [
     { id: 1, name: 'home' },
     { id: 2, name: 'features' },
@@ -20,6 +24,10 @@ const Header = () => {
     { id: 8, name: 'contact' },
   ];
 
+  const makeActive = e => {
+    setActive(e.target.textContent.toLowerCase());
+  };
+
   return (
     <StyledHeader>
       <Container>
@@ -29,7 +37,15 @@ const Header = () => {
             <NavList>
               {navigationList.map(({ id, name }) => (
                 <NavItem key={id}>
-                  <NavLink href={`#${name}`}>{name.toUpperCase()}</NavLink>
+                  <NavLink
+                    href={`#${name}`}
+                    style={{
+                      position: name === active && 'relative',
+                    }}
+                    onClick={makeActive}
+                  >
+                    {name.toUpperCase()}
+                  </NavLink>
                 </NavItem>
               ))}
             </NavList>

@@ -1,4 +1,14 @@
 import { useForm } from 'react-hook-form';
+import Container from 'components/Container';
+import {
+  StyledSection,
+  FormWrapper,
+  Title,
+  StyledForm,
+  StyledInput,
+  StyledTextArea,
+  StyledButton,
+} from './Contact.styled';
 
 const Contact = () => {
   const { register, handleSubmit, reset } = useForm({
@@ -11,34 +21,39 @@ const Contact = () => {
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Your name"
-          {...register('name')}
-        />
-        <input
-          type="mail"
-          name="email"
-          placeholder="Your email"
-          {...register('email')}
-        />
-        <input
-          type="text"
-          name="subject"
-          placeholder="Subject"
-          {...register('subject')}
-        />
-        <textarea
-          name="message"
-          placeholder="Message"
-          {...register('message')}
-        ></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </>
+    <StyledSection id="contact">
+      <Container>
+        <FormWrapper>
+          <Title>Contact</Title>
+          <StyledForm onSubmit={handleSubmit(onSubmit)}>
+            <StyledInput
+              type="text"
+              name="name"
+              placeholder="Your name"
+              {...register('name')}
+            />
+            <StyledInput
+              type="mail"
+              name="email"
+              placeholder="Your email"
+              {...register('email')}
+            />
+            <StyledInput
+              type="text"
+              name="subject"
+              placeholder="Subject"
+              {...register('subject')}
+            />
+            <StyledTextArea
+              name="message"
+              placeholder="Message"
+              {...register('message')}
+            ></StyledTextArea>
+            <StyledButton type="submit">Send</StyledButton>
+          </StyledForm>
+        </FormWrapper>
+      </Container>
+    </StyledSection>
   );
 };
 

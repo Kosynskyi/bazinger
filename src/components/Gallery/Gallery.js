@@ -21,7 +21,7 @@ import {
 
 const Gallery = () => {
   return (
-    <StyledSection>
+    <StyledSection id="gallery">
       <Container>
         <Title>show the gallery</Title>
         <Text>summarise what your product is all about</Text>
@@ -29,7 +29,7 @@ const Gallery = () => {
           <GalleryItem>
             <PictureWrapper>
               <Picture>
-                <source srcset={`${screenShot1_1x} 1x, ${screenShot1_2x} 2x`} />
+                <source srcSet={`${screenShot1_1x} 1x, ${screenShot1_2x} 2x`} />
                 <img
                   src={screenShot1_1x}
                   alt="screen shots 1"
@@ -53,7 +53,7 @@ const Gallery = () => {
           <GalleryItem>
             <PictureWrapper>
               <Picture>
-                <source srcset={`${screenShot2_1x} 1x, ${screenShot2_2x} 2x`} />
+                <source srcSet={`${screenShot2_1x} 1x, ${screenShot2_2x} 2x`} />
                 <img
                   src={screenShot2_1x}
                   alt="screen shots 2"
@@ -74,7 +74,7 @@ const Gallery = () => {
           <GalleryItem>
             <PictureWrapper>
               <Picture>
-                <source srcset={`${screenShot2_1x} 1x, ${screenShot2_2x} 2x`} />
+                <source srcSet={`${screenShot2_1x} 1x, ${screenShot2_2x} 2x`} />
                 <img
                   src={screenShot2_1x}
                   alt="screen shots 3"
@@ -95,7 +95,7 @@ const Gallery = () => {
           <GalleryItem>
             <PictureWrapper>
               <Picture>
-                <source srcset={`${screenShot2_1x} 1x, ${screenShot2_2x} 2x`} />
+                <source srcSet={`${screenShot2_1x} 1x, ${screenShot2_2x} 2x`} />
                 <img
                   src={screenShot2_1x}
                   alt="screen shots 4"

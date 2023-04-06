@@ -11,7 +11,7 @@ import {
 
 const Video = () => {
   return (
-    <StyledSection>
+    <StyledSection id="video">
       <Container>
         <VideoWrapper>
           <ButtonPlay>

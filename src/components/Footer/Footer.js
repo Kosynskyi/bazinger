@@ -1,11 +1,16 @@
-import React from 'react';
+import Container from 'components/Container';
+import { StyledFooter, FooterWrapper, Text } from './Footer.styled';
 
 const Footer = () => {
   return (
-    <div>
-      <p>Copyright U+00A9 2013 | bazinger | All Rights Reserved</p>
-      <p>Terms of Service | Privacy Policy</p>
-    </div>
+    <StyledFooter>
+      <Container>
+        <FooterWrapper>
+          <Text>Copyright &copy; 2013 | bazinger | All Rights Reserved</Text>
+          <Text>Terms of Service | Privacy Policy</Text>
+        </FooterWrapper>
+      </Container>
+    </StyledFooter>
   );
 };
 

@@ -16,7 +16,7 @@ import {
 
 const Features = () => {
   return (
-    <StyledSection>
+    <StyledSection id="features">
       <Container>
         <Title>summarise the features</Title>
         <Text>summarise what your product is all about</Text>

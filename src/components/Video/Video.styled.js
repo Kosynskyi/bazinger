@@ -1,17 +1,26 @@
 import styled from 'styled-components';
-import ReactPlayer from 'react-player/youtube';
 import VideoBackgroundImg from '../../assets/background_video_1x.jpg';
+import { breakpoints } from 'services/mixins/mixins';
 
 export const StyledSection = styled.section`
-  padding-top: 160px;
-  padding-bottom: 145px;
+  padding-top: 60px;
+  padding-bottom: 45px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-image: url(${VideoBackgroundImg});
-  /* background-color: rgb(255, 255, 255); */
   width: 100%;
   border-bottom: 3px solid rgb(255, 255, 255);
+
+  @media ${breakpoints.onlyTablet} {
+    padding-top: 120px;
+    padding-bottom: 100px;
+  }
+
+  @media ${breakpoints.desktop} {
+    padding-top: 160px;
+    padding-bottom: 145px;
+  }
 `;
 
 export const VideoWrapper = styled.div`
@@ -22,20 +31,36 @@ export const VideoWrapper = styled.div`
 `;
 
 export const ButtonPlay = styled.button`
-  margin-bottom: 40px;
+  margin-bottom: 25px;
   padding: 0;
   background-color: transparent;
   cursor: pointer;
   border: none;
+
+  @media ${breakpoints.onlyTablet} {
+    margin-bottom: 30px;
+  }
+
+  @media ${breakpoints.desktop} {
+    margin-bottom: 40px;
+  }
 `;
 
 export const Title = styled.h2`
   margin-bottom: 27px;
   /* font-family: 'Lato'; */
-  font-size: 48px;
+  font-size: 24px;
   color: #ffffff;
   font-weight: 300;
-  boxshadow: 0px 1px 1.5px rgba(25, 22, 24, 0.36);
+  text-align: center;
+
+  @media ${breakpoints.onlyTablet} {
+    font-size: 40px;
+  }
+
+  @media ${breakpoints.desktop} {
+    font-size: 48px;
+  }
 `;
 
 export const TitleSpan = styled.span`
@@ -44,12 +69,16 @@ export const TitleSpan = styled.span`
 
 export const Text = styled.p`
   /* font-family: 'Lato'; */
-  width: 673px;
-  font-size: 18px;
+  font-size: 14px;
   color: #ffffff;
   font-weight: 300;
-`;
 
-export const StyledReactPlayer = styled(ReactPlayer)`
-  /* width: '80vw'; */
+  @media ${breakpoints.onlyTablet} {
+    font-size: 18px;
+  }
+
+  @media ${breakpoints.desktop} {
+    font-size: 18px;
+    width: 673px;
+  }
 `;

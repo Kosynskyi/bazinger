@@ -4,7 +4,6 @@ import screenShot1_2x from '../../assets/screen1_2x@2x.png';
 import screenShot2_1x from '../../assets/screen2_1x.png';
 import screenShot2_2x from '../../assets/screen2_2x@2x.png';
 import { ReactComponent as AddScreenShot } from '../../assets/add-icon.svg';
-
 import {
   StyledSection,
   Title,
@@ -14,12 +13,14 @@ import {
   GalletySubTitle,
   SubText,
   PictureWrapper,
-  Picture,
   SubTextWrapper,
   ButtonAdd,
 } from './Gallery.styled';
 
 const Gallery = () => {
+  const subText =
+    'Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque mi id faucibus iaculis vitae pulvinar.';
+
   return (
     <StyledSection id="gallery">
       <Container>
@@ -28,7 +29,7 @@ const Gallery = () => {
         <GalleryList>
           <GalleryItem>
             <PictureWrapper>
-              <Picture>
+              <picture>
                 <source srcSet={`${screenShot1_1x} 1x, ${screenShot1_2x} 2x`} />
                 <img
                   src={screenShot1_1x}
@@ -36,23 +37,19 @@ const Gallery = () => {
                   width="270"
                   loading="lazy"
                 />
-              </Picture>
+              </picture>
               <ButtonAdd>
                 <AddScreenShot />
               </ButtonAdd>
               <GalletySubTitle>screen shot #1</GalletySubTitle>
             </PictureWrapper>
             <SubTextWrapper>
-              <SubText>
-                Nunc cursus libero purus ac congue arcu cursus ut sed vitae
-                pulvinar massa idporta nequetiam elerisque mi id faucibus
-                iaculis vitae pulvinar.
-              </SubText>
+              <SubText>{subText}</SubText>
             </SubTextWrapper>
           </GalleryItem>
           <GalleryItem>
             <PictureWrapper>
-              <Picture>
+              <picture>
                 <source srcSet={`${screenShot2_1x} 1x, ${screenShot2_2x} 2x`} />
                 <img
                   src={screenShot2_1x}
@@ -60,20 +57,16 @@ const Gallery = () => {
                   width="270"
                   loading="lazy"
                 />
-              </Picture>
+              </picture>
               <GalletySubTitle>screen shot #2</GalletySubTitle>
             </PictureWrapper>
             <SubTextWrapper>
-              <SubText>
-                Nunc cursus libero purus ac congue arcu cursus ut sed vitae
-                pulvinar massa idporta nequetiam elerisque mi id faucibus
-                iaculis vitae pulvinar.
-              </SubText>
+              <SubText>{subText}</SubText>
             </SubTextWrapper>
           </GalleryItem>
           <GalleryItem>
             <PictureWrapper>
-              <Picture>
+              <picture>
                 <source srcSet={`${screenShot2_1x} 1x, ${screenShot2_2x} 2x`} />
                 <img
                   src={screenShot2_1x}
@@ -81,20 +74,16 @@ const Gallery = () => {
                   width="270"
                   loading="lazy"
                 />
-              </Picture>
+              </picture>
               <GalletySubTitle>screen shot #3</GalletySubTitle>
             </PictureWrapper>
             <SubTextWrapper>
-              <SubText>
-                Nunc cursus libero purus ac congue arcu cursus ut sed vitae
-                pulvinar massa idporta nequetiam elerisque mi id faucibus
-                iaculis vitae pulvinar.
-              </SubText>
+              <SubText>{subText}</SubText>
             </SubTextWrapper>
           </GalleryItem>
           <GalleryItem>
             <PictureWrapper>
-              <Picture>
+              <picture>
                 <source srcSet={`${screenShot2_1x} 1x, ${screenShot2_2x} 2x`} />
                 <img
                   src={screenShot2_1x}
@@ -102,16 +91,11 @@ const Gallery = () => {
                   width="270"
                   loading="lazy"
                 />
-              </Picture>
+              </picture>
               <GalletySubTitle>screen shot #4</GalletySubTitle>
             </PictureWrapper>
-
             <SubTextWrapper>
-              <SubText>
-                Nunc cursus libero purus ac congue arcu cursus ut sed vitae
-                pulvinar massa idporta nequetiam elerisque mi id faucibus
-                iaculis vitae pulvinar.
-              </SubText>
+              <SubText>{subText}</SubText>
             </SubTextWrapper>
           </GalleryItem>
         </GalleryList>

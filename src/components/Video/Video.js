@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useMedia } from 'react-use';
+import ReactPlayer from 'react-player/youtube';
 import Container from 'components/Container';
 import Modal from 'components/Modal';
 import { ReactComponent as PlayIcon } from '../../assets/play-icon.svg';
@@ -9,11 +11,11 @@ import {
   Title,
   TitleSpan,
   Text,
-  StyledReactPlayer,
 } from './Video.styled';
 
 const Video = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const isWide = useMedia('(min-width: 768px)');
 
   const openModal = () => {
     setIsOpenModal(prev => !prev);
@@ -28,10 +30,11 @@ const Video = () => {
       <Container>
         {isOpenModal && (
           <Modal closeModal={closeModal}>
-            <StyledReactPlayer
+            <ReactPlayer
               url="https://youtu.be/Xx3O_dpt90c"
               controls={true}
-              width="50vw"
+              width={isWide ? '640px' : '80vw'}
+              height={isWide ? '360px' : '240px'}
             />
           </Modal>
         )}

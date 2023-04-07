@@ -1,56 +1,37 @@
 import { useState } from 'react';
-
+import { useMedia } from 'react-use';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import UserNav from 'components/UserNav/UserNav';
+import MobileNavigation from 'components/MobileNavigation';
 import Container from 'components/Container';
 import Logo from 'components/Logo';
-import {
-  StyledHeader,
-  NavList,
-  NavItem,
-  NavLink,
-  Thumb,
-} from './Header.styled';
+import { StyledHeader, Thumb, ButtonBurger } from './Header.styled';
 
 const Header = () => {
-  const [active, setActive] = useState('home');
+  const [menuOpen, setMenuOpen] = useState(false);
+  const isWide = useMedia('(min-width: 768px)');
 
-  const navigationList = [
-    { id: 1, name: 'home' },
-    { id: 2, name: 'features' },
-    { id: 3, name: 'gallery' },
-    { id: 4, name: 'video' },
-    { id: 5, name: 'prices' },
-    { id: 6, name: 'testimonials' },
-    { id: 7, name: 'download' },
-    { id: 8, name: 'contact' },
-  ];
-
-  const makeActive = e => {
-    setActive(e.target.textContent.toLowerCase());
+  const openBurgerMenu = () => {
+    setMenuOpen(prev => !prev);
   };
 
   return (
     <StyledHeader>
       <Container>
-        <Thumb>
-          <Logo />
-          <nav>
-            <NavList>
-              {navigationList.map(({ id, name }) => (
-                <NavItem key={id}>
-                  <NavLink
-                    href={`#${name}`}
-                    style={{
-                      position: name === active && 'relative',
-                    }}
-                    onClick={makeActive}
-                  >
-                    {name.toUpperCase()}
-                  </NavLink>
-                </NavItem>
-              ))}
-            </NavList>
-          </nav>
-        </Thumb>
+        {isWide ? (
+          <Thumb>
+            <Logo />
+            <UserNav />
+          </Thumb>
+        ) : (
+          <Thumb>
+            <Logo />
+            <ButtonBurger type="button" onClick={() => openBurgerMenu()}>
+              <GiHamburgerMenu size="24px" />
+            </ButtonBurger>
+            {menuOpen && <MobileNavigation setOpen={setMenuOpen} />}
+          </Thumb>
+        )}
       </Container>
     </StyledHeader>
   );

@@ -1,22 +1,37 @@
 import styled from 'styled-components';
 import heroBackgroundImg from '../../assets/Layer_1x.jpg';
+import { breakpoints } from 'services/mixins/mixins';
 
 export const StyledSection = styled.section`
-  padding-top: 249px;
-  /* max-width: 1480px; */
+  padding-top: 100px;
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-image: url(${heroBackgroundImg});
   border-bottom: 4px solid rgb(75, 201, 255);
+
+  @media ${breakpoints.onlyTablet} {
+    padding-top: 150px;
+  }
+
+  @media ${breakpoints.desktop} {
+    padding-top: 349px;
+  }
 `;
 
 export const HeroWrapper = styled.div`
   margin-left: auto;
-  width: 667px;
-  padding-bottom: 80px;
-  /* outline: 1px solid green; */
+  padding-bottom: 40px;
+
+  @media ${breakpoints.onlyTablet} {
+    width: 450px;
+  }
+
+  @media ${breakpoints.desktop} {
+    padding-bottom: 80px;
+    width: 673px;
+  }
 `;
 
 export const MainTitle = styled.h1`
@@ -34,38 +49,71 @@ export const MainTitle = styled.h1`
 
 export const Title = styled.h2`
   /* font-family: "Lato"; */
-  margin-bottom: 22px;
-  font-size: 48px;
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 400;
   color: ${props => props.theme.colors.white};
-  font-weight: 300;
-  /* box-shadow: 0px 1px 1.5px rgba(25, 22, 24, 0.36); */
+
+  @media ${breakpoints.onlyTablet} {
+    font-size: 32px;
+    font-weight: 300;
+  }
+
+  @media ${breakpoints.desktop} {
+    margin-bottom: 22px;
+    font-size: 48px;
+    font-weight: 300;
+  }
 `;
 
 export const TitleSpan = styled.span`
-  font-weight: 700;
+  font-weight: 500;
+
+  @media ${breakpoints.desktop} {
+    font-weight: 700;
+  }
 `;
 
 export const Text = styled.p`
-  margin-bottom: 41px;
+  margin-bottom: 28px;
   /* font-family: 'Lato'; */
-  font-size: 18px;
+  font-size: 16px;
   color: ${props => props.theme.colors.white};
   font-weight: 300;
+
+  @media ${breakpoints.onlyTablet} {
+    margin-bottom: 36px;
+  }
+
+  @media ${breakpoints.desktop} {
+    margin-bottom: 41px;
+    font-size: 18px;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  width: 430px;
-  margin-bottom: 48px;
+  justify-content: space-around;
+  margin-bottom: 36px;
+
+  @media ${breakpoints.onlyTablet} {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  @media ${breakpoints.desktop} {
+    justify-content: space-between;
+    margin-bottom: 48px;
+    width: 430px;
+  }
 `;
 
 export const StyledButton = styled.button`
-  padding: 25px 52px;
+  padding: 12px 20px;
   /* font-family: "Lato"; */
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 700;
   border-radius: 8px;
   background-color: transparent;
@@ -78,6 +126,16 @@ export const StyledButton = styled.button`
     background-color: ${props => props.theme.colors.primary};
     box-shadow: 0px 4px 0px #277697;
   }
+
+  @media ${breakpoints.minTablet} {
+    padding: 20px 44px;
+    font-size: 15px;
+  }
+
+  @media ${breakpoints.desktop} {
+    padding: 25px 52px;
+    font-size: 15px;
+  }
 `;
 
 export const AvailableStoreWrapper = styled.div`
@@ -85,7 +143,7 @@ export const AvailableStoreWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 250px; //???????????
+  width: 250px;
 `;
 
 export const AvailableText = styled.p`
@@ -119,8 +177,8 @@ export const StoreLink = styled.a`
 
 export const ButtonSliderLeft = styled.button`
   position: absolute;
-  top: 45px;
-  left: -85px;
+  top: 140px;
+  left: -55px;
   border-radius: 50%;
   width: 54px;
   height: 54px;
@@ -134,13 +192,23 @@ export const ButtonSliderLeft = styled.button`
 
   &:hover > svg > path {
     fill: rgb(65, 64, 66);
+  }
+
+  @media ${breakpoints.minTablet} {
+    top: 105px;
+    left: -55px;
+  }
+
+  @media ${breakpoints.desktop} {
+    top: 45px;
+    left: -85px;
   }
 `;
 
 export const ButtonSliderRight = styled.button`
   position: absolute;
-  top: 45px;
-  right: -85px;
+  top: 140px;
+  right: -55px;
   border-radius: 50%;
   width: 54px;
   height: 54px;
@@ -154,6 +222,16 @@ export const ButtonSliderRight = styled.button`
 
   &:hover > svg > path {
     fill: rgb(65, 64, 66);
+  }
+
+  @media ${breakpoints.minTablet} {
+    top: 105px;
+    right: -55px;
+  }
+
+  @media ${breakpoints.desktop} {
+    top: 45px;
+    right: -85px;
   }
 `;
 

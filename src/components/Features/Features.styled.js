@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoints } from 'services/mixins/mixins';
 
 export const StyledSection = styled.section`
   padding-top: 50px;
@@ -9,10 +10,14 @@ export const StyledSection = styled.section`
 
 export const Title = styled.h2`
   /* font-family: "Lato"; */
-  font-size: 36px;
+  font-size: 25px;
   color: #414042;
   font-weight: 900;
   text-align: center;
+
+  @media ${breakpoints.minTablet} {
+    font-size: 36px;
+  }
 `;
 
 export const Text = styled.p`
@@ -26,11 +31,19 @@ export const Text = styled.p`
 
 export const FeaturesList = styled.ul`
   display: flex;
-
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  list-style: none;
+
+  @media ${breakpoints.onlyTablet} {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  @media ${breakpoints.desktop} {
+    flex-direction: row;
+  }
 `;
 
 export const IconWrapper = styled.div`
@@ -51,11 +64,11 @@ export const FeaturesItem = styled.li`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-right: 69px;
+  margin-bottom: 20px;
   cursor: pointer;
 
-  &:last-child() {
-    margin-right: 0;
+  &:last-child {
+    margin-bottom: 0;
   }
 
   &:hover > div {
@@ -64,6 +77,25 @@ export const FeaturesItem = styled.li`
 
   &:hover > h3 {
     color: rgb(75, 202, 255);
+  }
+
+  @media ${breakpoints.onlyTablet} {
+    margin: 0;
+    margin-bottom: 40px;
+    width: 40%;
+
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+  }
+
+  @media ${breakpoints.desktop} {
+    margin: 0;
+    margin-right: 69px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 `;
 

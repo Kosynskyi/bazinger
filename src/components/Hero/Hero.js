@@ -4,9 +4,7 @@ import { ReactComponent as Apple } from '../../assets/apple.svg';
 import { ReactComponent as Android } from '../../assets/android.svg';
 import { ReactComponent as ArrowLeft } from '../../assets/arrowLeft.svg';
 import { ReactComponent as ArrowRight } from '../../assets/arrowRight.svg';
-
 import dataHero from 'data/dataHero.json';
-
 import {
   StyledSection,
   HeroWrapper,

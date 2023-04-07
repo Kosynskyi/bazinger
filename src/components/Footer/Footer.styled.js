@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoints } from 'services/mixins/mixins';
 
 export const StyledFooter = styled.footer`
   padding-top: 50px;
@@ -9,9 +10,17 @@ export const StyledFooter = styled.footer`
 
 export const FooterWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
+  @media ${breakpoints.maxMobile} {
+    height: 40px;
+  }
+
+  @media ${breakpoints.minTablet} {
+    flex-direction: row;
+  }
 `;
 
 export const Text = styled.p`

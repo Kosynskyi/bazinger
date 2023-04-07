@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoints } from 'services/mixins/mixins';
 
 export const StyledSection = styled.section`
   padding-top: 50px;
@@ -9,31 +10,75 @@ export const StyledSection = styled.section`
 
 export const Title = styled.h2`
   /* font-family: "Lato"; */
-  font-size: 36px;
+  font-size: 25px;
   color: rgb(65, 64, 66);
   font-weight: 900;
   text-align: center;
+
+  @media ${breakpoints.minTablet} {
+    font-size: 36px;
+  }
 `;
 
 export const Text = styled.p`
   /* font-family: "Lato"; */
-  margin-bottom: 67px;
+  margin-bottom: 27px;
   font-size: 20px;
   color: rgb(65, 64, 66);
   font-weight: 300;
   text-align: center;
+
+  @media ${breakpoints.onlyTablet} {
+    margin-bottom: 47px;
+  }
+
+  @media ${breakpoints.desktop} {
+    margin-bottom: 67px;
+  }
 `;
 
 export const GalleryList = styled.ul`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  list-style: none;
+
+  @media ${breakpoints.onlyTablet} {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  @media ${breakpoints.desktop} {
+    flex-direction: row;
+  }
 `;
 
 export const GalleryItem = styled.li`
-  width: 270px;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media ${breakpoints.onlyTablet} {
+    margin: 0;
+    margin-bottom: 40px;
+    width: 40%;
+
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+  }
+
+  @media ${breakpoints.desktop} {
+    width: 270px;
+    margin: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 `;
 
 export const GalletySubTitle = styled.h3`
@@ -51,18 +96,10 @@ export const GalletySubTitle = styled.h3`
 export const SubText = styled.p`
   /* font-family: "Lato"; */
   font-size: 13px;
-  line-height: 22px;
+  line-height: 1.7;
   color: rgb(131, 131, 131);
   font-weight: 400;
   text-align: center;
-
-  /* position: absolute;
-    bottom: 0px;
-    width: 100%; */
-`;
-
-export const Picture = styled.picture`
-  /* position: relative; */
 `;
 
 export const PictureWrapper = styled.div`

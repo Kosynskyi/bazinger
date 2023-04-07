@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import Container from 'components/Container';
+import Modal from 'components/Modal';
 import { ReactComponent as PlayIcon } from '../../assets/play-icon.svg';
 import {
   StyledSection,
@@ -7,14 +9,34 @@ import {
   Title,
   TitleSpan,
   Text,
+  StyledReactPlayer,
 } from './Video.styled';
 
 const Video = () => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const openModal = () => {
+    setIsOpenModal(prev => !prev);
+  };
+
+  const closeModal = () => {
+    setIsOpenModal(prev => !prev);
+  };
+
   return (
     <StyledSection id="video">
       <Container>
+        {isOpenModal && (
+          <Modal closeModal={closeModal}>
+            <StyledReactPlayer
+              url="https://youtu.be/Xx3O_dpt90c"
+              controls={true}
+              width="50vw"
+            />
+          </Modal>
+        )}
         <VideoWrapper>
-          <ButtonPlay>
+          <ButtonPlay type="button" onClick={() => openModal()}>
             <PlayIcon />
           </ButtonPlay>
           <Title>

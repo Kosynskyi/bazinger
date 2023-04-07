@@ -15,6 +15,7 @@ export const StyledSection = styled.section`
 export const HeroWrapper = styled.div`
   margin-left: auto;
   width: 667px;
+  padding-bottom: 80px;
   /* outline: 1px solid green; */
 `;
 
@@ -84,7 +85,6 @@ export const AvailableStoreWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 80px;
   width: 250px; //???????????
 `;
 
@@ -117,11 +117,14 @@ export const StoreLink = styled.a`
   }
 `;
 
-export const ButtonSlider = styled.button`
+export const ButtonSliderLeft = styled.button`
+  position: absolute;
+  top: 45px;
+  left: -85px;
   border-radius: 50%;
   width: 54px;
   height: 54px;
-  background-color: rgba(33, 64, 83, 0.2);
+  background-color: rgb(33, 65, 84);
   border: none;
   cursor: pointer;
 
@@ -132,4 +135,48 @@ export const ButtonSlider = styled.button`
   &:hover > svg > path {
     fill: rgb(65, 64, 66);
   }
+`;
+
+export const ButtonSliderRight = styled.button`
+  position: absolute;
+  top: 45px;
+  right: -85px;
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  background-color: rgb(33, 65, 84);
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(75, 202, 255);
+  }
+
+  &:hover > svg > path {
+    fill: rgb(65, 64, 66);
+  }
+`;
+
+export const SlideIndicatorList = styled.ul`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 18px;
+`;
+
+export const SlideIndicatorItem = styled.li`
+  margin-right: 11px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+`;
+
+export const SlideIndicator = styled.button`
+  width: 15px;
+  height: 15px;
+  border: 1px solid white;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
 `;

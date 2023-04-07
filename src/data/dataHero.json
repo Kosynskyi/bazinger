@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "text": "Slide 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget nunc vitae tellus luctus ullamcorper. Nam porttitor ullamcorper felis at convallis. Aenean ornare vestibulum nisi fringilla lacinia. Nullam pulvinar sollicitudin velit id laoreet. Quisque non rhoncus sem."
+  },
+  {
+    "id": 2,
+    "text": "Slide 2. Слайдер робочий. Можемо перемикатись боковими кнопками та індикаторами знизу. Я вирішив змінювати лише текст для наглядності, оскільки в кнопки можна динамічно додавати посилання на app чи google store і так само робити будь-які інші дії, які могли би бути в кнопках download та learn more"
+  },
+  {
+    "id": 3,
+    "text": "Slide 3. А заголовок simple, beautiful and amazing - я не змінюю свідомо, зважаючи на те, що це може бути слоган цього сайту, але якщо потрібно - то це швидко і просто можна переробити. На своїх проектах, коли я отримував дані з бека - я використовував бібліотеку react-paginate"
+  }
+]

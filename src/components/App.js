@@ -5,6 +5,7 @@ import Gallery from './Gallery';
 import Video from './Video';
 import Contact from './Contact';
 import Footer from './Footer';
+import BackToTop from './BackToTop/BackToTop';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <BackToTop />
     </>
   );
 }

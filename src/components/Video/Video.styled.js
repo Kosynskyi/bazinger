@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import ReactPlayer from 'react-player/youtube';
 import VideoBackgroundImg from '../../assets/background_video_1x.jpg';
 
 export const StyledSection = styled.section`
@@ -47,4 +48,8 @@ export const Text = styled.p`
   font-size: 18px;
   color: #ffffff;
   font-weight: 300;
+`;
+
+export const StyledReactPlayer = styled(ReactPlayer)`
+  /* width: '80vw'; */
 `;

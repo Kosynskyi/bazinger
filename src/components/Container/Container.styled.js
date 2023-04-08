@@ -7,15 +7,12 @@ export const ContainerWrapper = styled.div`
   padding-left: 15px;
   padding-right: 15px;
   width: 320px;
-  /* outline: 1px solid yellow; */
 
   @media ${breakpoints.onlyTablet} {
     width: 768px;
-    /* outline: 1px solid yellow; */
   }
 
   @media ${breakpoints.desktop} {
     width: 1200px;
-    /* outline: 1px solid yellow; */
   }
 `;

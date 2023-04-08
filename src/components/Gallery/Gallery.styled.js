@@ -4,15 +4,14 @@ import { breakpoints } from 'services/mixins/mixins';
 export const StyledSection = styled.section`
   padding-top: 50px;
   padding-bottom: 107px;
-  background-color: rgb(255, 255, 255);
+  background-color: ${props => props.theme.colors.white};
   width: 100%;
 `;
 
 export const Title = styled.h2`
-  /* font-family: "Lato"; */
+  font-weight: ${props => props.theme.fontWeights.black};
   font-size: 25px;
-  color: rgb(65, 64, 66);
-  font-weight: 900;
+  color: ${props => props.theme.colors.secondaryTitle};
   text-align: center;
 
   @media ${breakpoints.minTablet} {
@@ -21,11 +20,10 @@ export const Title = styled.h2`
 `;
 
 export const Text = styled.p`
-  /* font-family: "Lato"; */
   margin-bottom: 27px;
+  font-weight: ${props => props.theme.fontWeights.light};
   font-size: 20px;
-  color: rgb(65, 64, 66);
-  font-weight: 300;
+  color: ${props => props.theme.colors.secondaryTitle};
   text-align: center;
 
   @media ${breakpoints.onlyTablet} {
@@ -82,23 +80,21 @@ export const GalleryItem = styled.li`
 `;
 
 export const GalletySubTitle = styled.h3`
-  /* font-family: "Lato"; */
   position: absolute;
   bottom: 10px;
   width: 100%;
+  font-weight: ${props => props.theme.fontWeights.bold};
   font-size: 15px;
+  color: ${props => props.theme.colors.primary};
   text-transform: uppercase;
-  color: rgb(75, 202, 255);
-  font-weight: 700;
   text-align: center;
 `;
 
 export const SubText = styled.p`
-  /* font-family: "Lato"; */
+  font-weight: ${props => props.theme.fontWeights.regular};
   font-size: 13px;
-  line-height: 1.7;
   color: rgb(131, 131, 131);
-  font-weight: 400;
+  line-height: 1.7;
   text-align: center;
 `;
 
@@ -121,6 +117,6 @@ export const ButtonAdd = styled.button`
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  border: none;
+  border: ${props => props.theme.borders.none};
   cursor: pointer;
 `;

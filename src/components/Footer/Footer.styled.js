@@ -4,7 +4,7 @@ import { breakpoints } from 'services/mixins/mixins';
 export const StyledFooter = styled.footer`
   padding-top: 50px;
   padding-bottom: 50px;
-  background-color: rgb(65, 64, 66);
+  background-color: ${props => props.theme.colors.secondaryTitle};
   width: 100%;
 `;
 
@@ -24,9 +24,8 @@ export const FooterWrapper = styled.div`
 `;
 
 export const Text = styled.p`
-  /* font-family: 'Lato'; */
+  font-weight: ${props => props.theme.fontWeights.regular};
   font-size: 12px;
-  color: #ffffff;
-  font-weight: 400;
+  color: ${props => props.theme.colors.white};
   opacity: 0.251;
 `;

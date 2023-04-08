@@ -9,7 +9,6 @@ export const StyledSection = styled.section`
   background-position: center;
   background-size: cover;
   background-image: url(${heroBackgroundImg});
-  border-bottom: 4px solid rgb(75, 201, 255);
 
   @media ${breakpoints.onlyTablet} {
     padding-top: 150px;
@@ -48,38 +47,36 @@ export const MainTitle = styled.h1`
 `;
 
 export const Title = styled.h2`
-  /* font-family: "Lato"; */
   margin-bottom: 12px;
+  font-weight: ${props => props.theme.fontWeights.regular};
   font-size: 20px;
-  font-weight: 400;
   color: ${props => props.theme.colors.white};
 
   @media ${breakpoints.onlyTablet} {
+    font-weight: ${props => props.theme.fontWeights.light};
     font-size: 32px;
-    font-weight: 300;
   }
 
   @media ${breakpoints.desktop} {
     margin-bottom: 22px;
+    font-weight: ${props => props.theme.fontWeights.light};
     font-size: 48px;
-    font-weight: 300;
   }
 `;
 
 export const TitleSpan = styled.span`
-  font-weight: 500;
+  font-weight: ${props => props.theme.fontWeights.medium};
 
   @media ${breakpoints.desktop} {
-    font-weight: 700;
+    font-weight: ${props => props.theme.fontWeights.bold};
   }
 `;
 
 export const Text = styled.p`
   margin-bottom: 28px;
-  /* font-family: 'Lato'; */
+  font-weight: ${props => props.theme.fontWeights.light};
   font-size: 16px;
   color: ${props => props.theme.colors.white};
-  font-weight: 300;
 
   @media ${breakpoints.onlyTablet} {
     margin-bottom: 36px;
@@ -112,13 +109,13 @@ export const ButtonWrapper = styled.div`
 
 export const StyledButton = styled.button`
   padding: 12px 20px;
-  /* font-family: "Lato"; */
+  font-weight: ${props => props.theme.fontWeights.bold};
   font-size: 12px;
-  font-weight: 700;
-  border-radius: 8px;
-  background-color: transparent;
-  border: 2px solid #ffffff;
   color: ${props => props.theme.colors.white};
+  background-color: transparent;
+  border-radius: ${props => props.theme.radii.primary};
+  border: ${props => props.theme.borders.primary};
+  border-color: ${props => props.theme.colors.white};
   cursor: pointer;
 
   &:hover {
@@ -147,9 +144,8 @@ export const AvailableStoreWrapper = styled.div`
 `;
 
 export const AvailableText = styled.p`
-  /* font-family: "Lato"; */
+  font-weight: ${props => props.theme.fontWeights.light};
   font-size: 18px;
-  font-weight: 300;
   color: ${props => props.theme.colors.white};
 `;
 
@@ -167,11 +163,11 @@ export const StoreLink = styled.a`
   justify-content: center;
   width: 52px;
   height: 52px;
-  border-radius: 50%;
-  background-color: #030303;
+  border-radius: ${props => props.theme.radii.round};
+  background-color: ${props => props.theme.colors.backgroundIcons};
 
   &:hover > svg > path {
-    fill: rgb(75, 202, 255);
+    fill: ${props => props.theme.colors.primary};
   }
 `;
 
@@ -179,7 +175,7 @@ export const ButtonSliderLeft = styled.button`
   position: absolute;
   top: 140px;
   left: -55px;
-  border-radius: 50%;
+  border-radius: ${props => props.theme.radii.round};
   width: 54px;
   height: 54px;
   background-color: rgb(33, 65, 84);
@@ -187,11 +183,11 @@ export const ButtonSliderLeft = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: rgb(75, 202, 255);
+    background-color: ${props => props.theme.colors.primary};
   }
 
   &:hover > svg > path {
-    fill: rgb(65, 64, 66);
+    fill: ${props => props.theme.colors.secondaryTitle};
   }
 
   @media ${breakpoints.minTablet} {
@@ -209,7 +205,7 @@ export const ButtonSliderRight = styled.button`
   position: absolute;
   top: 140px;
   right: -55px;
-  border-radius: 50%;
+  border-radius: ${props => props.theme.radii.round};
   width: 54px;
   height: 54px;
   background-color: rgb(33, 65, 84);
@@ -217,11 +213,11 @@ export const ButtonSliderRight = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: rgb(75, 202, 255);
+    background-color: ${props => props.theme.colors.primary};
   }
 
   &:hover > svg > path {
-    fill: rgb(65, 64, 66);
+    fill: ${props => props.theme.colors.secondaryTitle};
   }
 
   @media ${breakpoints.minTablet} {
@@ -253,8 +249,9 @@ export const SlideIndicatorItem = styled.li`
 export const SlideIndicator = styled.button`
   width: 15px;
   height: 15px;
-  border: 1px solid white;
+  border: ${props => props.theme.borders.small};
+  border-color: ${props => props.theme.colors.white};
   background-color: transparent;
-  border-radius: 50%;
+  border-radius: ${props => props.theme.radii.round};
   cursor: pointer;
 `;

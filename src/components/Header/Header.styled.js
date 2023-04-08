@@ -3,7 +3,8 @@ import { breakpoints } from 'services/mixins/mixins';
 
 export const StyledHeader = styled.header`
   position: absolute;
-  border-bottom: 1px solid rgb(52, 83, 109);
+  border-bottom: ${props => props.theme.borders.small};
+  border-color: ${props => props.theme.colors.borderBottomHeader};
   background-color: rgba(0, 0, 0, 0.3);
   width: 100%;
 `;
@@ -13,12 +14,12 @@ export const Thumb = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 10px;
 
   @media ${breakpoints.onlyTablet} {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   @media ${breakpoints.desktop} {
@@ -28,9 +29,9 @@ export const Thumb = styled.div`
 `;
 
 export const ButtonBurger = styled.button`
-  border: none;
+  border: ${props => props.theme.borders.none};
   background-color: transparent;
-  color: rgb(75, 202, 255);
+  color: ${props => props.theme.colors.primary};
   cursor: pointer;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 

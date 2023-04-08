@@ -35,7 +35,7 @@ export const ButtonPlay = styled.button`
   padding: 0;
   background-color: transparent;
   cursor: pointer;
-  border: none;
+  border: ${props => props.theme.borders.none};
 
   @media ${breakpoints.onlyTablet} {
     margin-bottom: 30px;
@@ -48,10 +48,9 @@ export const ButtonPlay = styled.button`
 
 export const Title = styled.h2`
   margin-bottom: 27px;
-  /* font-family: 'Lato'; */
+  font-weight: ${props => props.theme.fontWeights.light};
   font-size: 24px;
-  color: #ffffff;
-  font-weight: 300;
+  color: ${props => props.theme.colors.white};
   text-align: center;
 
   @media ${breakpoints.onlyTablet} {
@@ -64,14 +63,13 @@ export const Title = styled.h2`
 `;
 
 export const TitleSpan = styled.span`
-  font-weight: 700;
+  font-weight: ${props => props.theme.fontWeights.bold};
 `;
 
 export const Text = styled.p`
-  /* font-family: 'Lato'; */
+  font-weight: ${props => props.theme.fontWeights.light};
   font-size: 14px;
-  color: #ffffff;
-  font-weight: 300;
+  color: ${props => props.theme.colors.white};
 
   @media ${breakpoints.onlyTablet} {
     font-size: 18px;

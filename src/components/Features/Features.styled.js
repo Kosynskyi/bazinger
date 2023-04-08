@@ -4,15 +4,14 @@ import { breakpoints } from 'services/mixins/mixins';
 export const StyledSection = styled.section`
   padding-top: 50px;
   padding-bottom: 91px;
-  background-color: rgb(249, 249, 249);
+  background-color: ${props => props.theme.colors.backgroundWhite};
   width: 100%;
 `;
 
 export const Title = styled.h2`
-  /* font-family: "Lato"; */
+  font-weight: ${props => props.theme.fontWeights.black};
   font-size: 25px;
-  color: #414042;
-  font-weight: 900;
+  color: ${props => props.theme.colors.secondaryTitle};
   text-align: center;
 
   @media ${breakpoints.minTablet} {
@@ -21,11 +20,10 @@ export const Title = styled.h2`
 `;
 
 export const Text = styled.p`
-  /* font-family: "Lato"; */
   margin-bottom: 67px;
+  font-weight: ${props => props.theme.fontWeights.light};
   font-size: 20px;
-  color: #414042;
-  font-weight: 300;
+  color: ${props => props.theme.colors.secondaryTitle};
   text-align: center;
 `;
 
@@ -53,9 +51,10 @@ export const IconWrapper = styled.div`
   margin-bottom: 30px;
   width: 171px;
   height: 171px;
-  border: 2px solid rgb(249, 249, 249);
-  border-radius: 50%;
-  background-color: rgb(75, 202, 255);
+  border: ${props => props.theme.borders.primary};
+  border-color: ${props => props.theme.colors.backgroundWhite};
+  border-radius: ${props => props.theme.radii.round};
+  background-color: ${props => props.theme.colors.primary};
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
@@ -72,11 +71,11 @@ export const FeaturesItem = styled.li`
   }
 
   &:hover > div {
-    background-color: rgb(65, 64, 66);
+    background-color: ${props => props.theme.colors.secondaryTitle};
   }
 
   &:hover > h3 {
-    color: rgb(75, 202, 255);
+    color: ${props => props.theme.colors.primary};
   }
 
   @media ${breakpoints.onlyTablet} {
@@ -100,20 +99,18 @@ export const FeaturesItem = styled.li`
 `;
 
 export const SubTitle = styled.h3`
-  /* font-family: "Lato"; */
   margin-bottom: 26px;
+  font-weight: ${props => props.theme.fontWeights.bold};
   font-size: 15px;
+  color: ${props => props.theme.colors.secondaryTitle};
   text-transform: uppercase;
-  color: rgb(65, 64, 66);
-  font-weight: 700;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
 export const SubText = styled.p`
-  /* font-family: "Lato"; */
+  font-weight: ${props => props.theme.fontWeights.regular};
   font-size: 13px;
-  line-height: 22px;
-  color: #838383;
-  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(131, 131, 131);
   text-align: center;
 `;

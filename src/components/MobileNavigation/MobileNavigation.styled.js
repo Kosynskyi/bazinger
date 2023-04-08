@@ -23,12 +23,12 @@ export const ButtonCloseMenu = styled.button`
   right: 25px;
   border: none;
   background-color: transparent;
-  color: rgb(75, 202, 255);
+  color: ${props => props.theme.colors.primary};
   cursor: pointer;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   & > svg > path {
-    stroke: rgb(75, 202, 255);
+    stroke: ${props => props.theme.colors.primary};
   }
 
   &:hover > svg > path {

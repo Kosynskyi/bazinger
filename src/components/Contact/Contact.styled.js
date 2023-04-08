@@ -10,7 +10,8 @@ export const StyledSection = styled.section`
   background-size: cover;
   background-image: url(${MapBackgroundImg});
   width: 100%;
-  border-bottom: 1px solid rgb(255, 255, 255);
+  border-bottom: ${props => props.theme.borders.small};
+  border-color: ${props => props.theme.colors.white};
 
   @media ${breakpoints.desktop} {
     padding-top: 108px;
@@ -44,10 +45,9 @@ export const StyledForm = styled.form`
 
 export const Title = styled.h2`
   margin-bottom: 20px;
-  /* font-family: "Lato"; */
+  font-weight: ${props => props.theme.fontWeights.bold};
   font-size: 28px;
-  color: #ffffff;
-  font-weight: 700;
+  color: ${props => props.theme.colors.white};
 
   @media ${breakpoints.minTablet} {
     margin-bottom: 28px;
@@ -59,18 +59,18 @@ export const StyledInput = styled.input`
   margin-bottom: 14px;
   padding: 12px;
   width: 240px;
-  border-radius: 4px;
-  background-color: #ffffff;
-  border: none;
+  border-radius: ${props => props.theme.radii.secondary};
+  background-color: ${props => props.theme.colors.white};
+  border: ${props => props.theme.borders.none};
 
   &:focus {
     outline: transparent;
   }
 
   &::placeholder {
-    /* font-family: "Arial"; */
+    font-family: ${props => props.theme.fonts.arial};
     font-size: 14px;
-    color: #d3d3d3;
+    color: ${props => props.theme.colors.placeholder};
     text-align: center;
   }
 
@@ -84,9 +84,9 @@ export const StyledTextArea = styled.textarea`
   padding: 12px;
   width: 240px;
   height: 146px;
-  border-radius: 4px;
-  background-color: #ffffff;
-  border: none;
+  border-radius: ${props => props.theme.radii.secondary};
+  background-color: ${props => props.theme.colors.white};
+  border: ${props => props.theme.borders.none};
   resize: none;
 
   &:focus {
@@ -94,9 +94,9 @@ export const StyledTextArea = styled.textarea`
   }
 
   &::placeholder {
-    /* font-family: "Arial"; */
+    font-family: ${props => props.theme.fonts.arial};
     font-size: 14px;
-    color: #d3d3d3;
+    color: ${props => props.theme.colors.placeholder};
     text-align: center;
   }
 
@@ -108,16 +108,13 @@ export const StyledTextArea = styled.textarea`
 export const StyledButton = styled.button`
   padding: 12px 79px;
   width: 100%;
-
   border-radius: 6px;
   box-shadow: 0px 4px 0px #313032;
-  background-color: #414042;
-  cursor: pointer;
-
-  /* font-family: "Lato"; */
+  background-color: ${props => props.theme.colors.secondaryTitle};
+  font-weight: ${props => props.theme.fontWeights.bold};
   font-size: 15px;
   color: #72b3cc;
-  font-weight: 700;
+  cursor: pointer;
 
   @media ${breakpoints.minTablet} {
     padding: 18px 79px;

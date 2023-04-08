@@ -6,10 +6,10 @@ import { NavList, NavItem, NavLink } from './UserNav.styled';
 const UserNav = ({ closeMobileMenu }) => {
   const [active, setActive] = useState('home');
   const isNarrow = useMedia('(max-width: 768px)');
+  const isTablet = useMedia('(max-width: 1199px)');
 
   const makeActive = name => {
     setActive(name);
-
     isNarrow && closeMobileMenu();
   };
 
@@ -17,14 +17,16 @@ const UserNav = ({ closeMobileMenu }) => {
     <nav>
       <NavList>
         {navigationList.map(({ id, name }) => (
-          <NavItem key={id}>
-            <NavLink
-              href={`#${name}`}
-              style={{
-                position: name === active && 'relative',
-              }}
-              onClick={() => makeActive(name)}
-            >
+          <NavItem
+            key={id}
+            style={{
+              borderTop:
+                !isNarrow && name === active && '2px solid rgb(75, 202, 255)',
+              paddingTop:
+                !isNarrow && name === active && (isTablet ? '28px' : '40px'),
+            }}
+          >
+            <NavLink href={`#${name}`} onClick={() => makeActive(name)}>
               {name.toUpperCase()}
             </NavLink>
           </NavItem>

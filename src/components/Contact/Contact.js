@@ -49,7 +49,9 @@ const Contact = () => {
               placeholder="Message"
               {...register('message')}
             ></StyledTextArea>
-            <StyledButton type="submit">Send</StyledButton>
+            <StyledButton type="submit" aria-label="button send form">
+              Send
+            </StyledButton>
           </StyledForm>
         </FormWrapper>
       </Container>

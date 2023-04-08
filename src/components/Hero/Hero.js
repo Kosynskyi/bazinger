@@ -58,18 +58,27 @@ const Hero = () => {
           </Title>
           <Text>{dataHero[activeSlide].text}</Text>
           <ButtonWrapper>
-            <StyledButton type="button">DOWNLOAD</StyledButton>
-            <StyledButton type="button">LEARN MORE</StyledButton>
+            <StyledButton type="button" aria-label="button download">
+              DOWNLOAD
+            </StyledButton>
+            <StyledButton type="button" aria-label="button learn more">
+              LEARN MORE
+            </StyledButton>
           </ButtonWrapper>
           <AvailableStoreWrapper>
             <AvailableText>Available on:</AvailableText>
             <StoreLinkWrapper>
-              <StoreLink href="https://www.apple.com" rel="noopener noreferrer">
+              <StoreLink
+                href="https://www.apple.com"
+                rel="noopener noreferrer"
+                aria-label="apple store"
+              >
                 <Apple />
               </StoreLink>
               <StoreLink
                 href="https://play.google.com/store/apps?hl=ru&gl=US&pli=1"
                 rel="noopener noreferrer"
+                aria-label="google store"
               >
                 <Android />
               </StoreLink>
@@ -84,6 +93,7 @@ const Hero = () => {
               left: suitableScreen && '-70px',
             }}
             onChange={prevSlide}
+            aria-label="button left"
           >
             <ArrowLeft />
           </ButtonSlider>
@@ -94,6 +104,7 @@ const Hero = () => {
               right: suitableScreen && '-70px',
             }}
             onChange={nextSlide}
+            aria-label="button right"
           >
             <ArrowRight />
           </ButtonSlider>
@@ -108,6 +119,7 @@ const Hero = () => {
                   border: activeSlide === idx && '1px solid rgb(75,202,255)',
                 }}
                 onClick={() => buttonSlider(idx)}
+                aria-label={`${id + 1} slide`}
               ></SlideIndicator>
             </SlideIndicatorItem>
           ))}

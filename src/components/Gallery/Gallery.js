@@ -33,12 +33,12 @@ const Gallery = () => {
                 <source srcSet={`${screenShot1_1x} 1x, ${screenShot1_2x} 2x`} />
                 <img
                   src={screenShot1_1x}
-                  alt="screen shots 1"
+                  alt="screen shot 1"
                   width="270"
                   loading="lazy"
                 />
               </picture>
-              <ButtonAdd>
+              <ButtonAdd type="button" aria-label="button add screen shot">
                 <AddScreenShot />
               </ButtonAdd>
               <GalletySubTitle>screen shot #1</GalletySubTitle>
@@ -53,7 +53,7 @@ const Gallery = () => {
                 <source srcSet={`${screenShot2_1x} 1x, ${screenShot2_2x} 2x`} />
                 <img
                   src={screenShot2_1x}
-                  alt="screen shots 2"
+                  alt="screen shot 2"
                   width="270"
                   loading="lazy"
                 />
@@ -70,7 +70,7 @@ const Gallery = () => {
                 <source srcSet={`${screenShot2_1x} 1x, ${screenShot2_2x} 2x`} />
                 <img
                   src={screenShot2_1x}
-                  alt="screen shots 3"
+                  alt="screen shot 3"
                   width="270"
                   loading="lazy"
                 />
@@ -87,7 +87,7 @@ const Gallery = () => {
                 <source srcSet={`${screenShot2_1x} 1x, ${screenShot2_2x} 2x`} />
                 <img
                   src={screenShot2_1x}
-                  alt="screen shots 4"
+                  alt="screen shot 4"
                   width="270"
                   loading="lazy"
                 />

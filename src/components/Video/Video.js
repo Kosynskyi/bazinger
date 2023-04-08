@@ -39,7 +39,11 @@ const Video = () => {
           </Modal>
         )}
         <VideoWrapper>
-          <ButtonPlay type="button" onClick={() => openModal()}>
+          <ButtonPlay
+            type="button"
+            onClick={() => openModal()}
+            aria-label="button open player"
+          >
             <PlayIcon />
           </ButtonPlay>
           <Title>

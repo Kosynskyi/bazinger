@@ -26,7 +26,11 @@ const UserNav = ({ closeMobileMenu }) => {
                 !isNarrow && name === active && (isTablet ? '28px' : '40px'),
             }}
           >
-            <NavLink href={`#${name}`} onClick={() => makeActive(name)}>
+            <NavLink
+              href={`#${name}`}
+              onClick={() => makeActive(name)}
+              aria-label={`${name} section`}
+            >
               {name.toUpperCase()}
             </NavLink>
           </NavItem>

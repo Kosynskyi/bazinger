@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import MapBackgroundImg from '../../assets/map_1x.jpg';
+import MapBackgroundImg from 'assets/map_1x.jpg';
 import { breakpoints } from 'services/mixins/mixins';
 
 export const StyledSection = styled.section`

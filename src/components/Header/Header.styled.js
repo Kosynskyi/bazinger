@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { breakpoints } from 'services/mixins/mixins';
 
 export const StyledHeader = styled.header`
-  position: absolute;
   border-bottom: ${props => props.theme.borders.small};
   border-color: ${props => props.theme.colors.borderBottomHeader};
   background-color: rgba(0, 0, 0, 0.3);
   width: 100%;
+  z-index: 100;
 `;
 
 export const Thumb = styled.div`

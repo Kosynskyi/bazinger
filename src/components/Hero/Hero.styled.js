@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import heroBackgroundImg from '../../assets/Layer_1x.jpg';
+import heroBackgroundImg from 'assets/Layer_1x.jpg';
 import { breakpoints } from 'services/mixins/mixins';
 
 export const StyledSection = styled.section`
@@ -21,9 +21,10 @@ export const StyledSection = styled.section`
 
 export const HeroWrapper = styled.div`
   margin-left: auto;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
 
   @media ${breakpoints.onlyTablet} {
+    padding-bottom: 40px;
     width: 450px;
   }
 
@@ -171,64 +172,15 @@ export const StoreLink = styled.a`
   }
 `;
 
-export const ButtonSliderLeft = styled.button`
-  position: absolute;
-  top: 140px;
-  left: -55px;
-  border-radius: ${props => props.theme.radii.round};
-  width: 54px;
-  height: 54px;
-  background-color: rgb(33, 65, 84);
-  border: none;
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${props => props.theme.colors.primary};
-  }
-
-  &:hover > svg > path {
-    fill: ${props => props.theme.colors.secondaryTitle};
-  }
-
-  @media ${breakpoints.minTablet} {
-    top: 105px;
-    left: -55px;
-  }
-
-  @media ${breakpoints.desktop} {
-    top: 45px;
-    left: -85px;
-  }
-`;
-
-export const ButtonSliderRight = styled.button`
-  position: absolute;
-  top: 140px;
-  right: -55px;
-  border-radius: ${props => props.theme.radii.round};
-  width: 54px;
-  height: 54px;
-  background-color: rgb(33, 65, 84);
-  border: none;
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${props => props.theme.colors.primary};
-  }
-
-  &:hover > svg > path {
-    fill: ${props => props.theme.colors.secondaryTitle};
-  }
-
-  @media ${breakpoints.minTablet} {
-    top: 105px;
-    right: -55px;
-  }
-
-  @media ${breakpoints.desktop} {
-    top: 45px;
-    right: -85px;
-  }
+export const ButtonSliderWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  width: 150px;
 `;
 
 export const SlideIndicatorList = styled.ul`

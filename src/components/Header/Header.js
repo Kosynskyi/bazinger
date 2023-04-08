@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useMedia } from 'react-use';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import UserNav from 'components/UserNav/UserNav';
@@ -9,14 +9,31 @@ import { StyledHeader, Thumb, ButtonBurger } from './Header.styled';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [opacityHeader, setOpacityHeader] = useState(false);
   const isWide = useMedia('(min-width: 768px)');
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        setOpacityHeader(true);
+      } else {
+        setOpacityHeader(false);
+      }
+    });
+  }, []);
 
   const openBurgerMenu = () => {
     setMenuOpen(prev => !prev);
   };
 
   return (
-    <StyledHeader>
+    <StyledHeader
+      style={{
+        position: isWide ? 'fixed' : 'absolute',
+        backgroundColor:
+          isWide && opacityHeader ? 'rgba(0, 0, 0, 1)' : 'rgba(0, 0, 0, 0.3)',
+      }}
+    >
       <Container>
         {isWide ? (
           <Thumb>

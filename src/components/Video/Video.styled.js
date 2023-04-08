@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import VideoBackgroundImg from '../../assets/background_video_1x.jpg';
+import VideoBackgroundImg from 'assets/background_video_1x.jpg';
 import { breakpoints } from 'services/mixins/mixins';
 
 export const StyledSection = styled.section`

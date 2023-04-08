@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useMedia } from 'react-use';
 import Container from 'components/Container';
-import { ReactComponent as Apple } from '../../assets/apple.svg';
-import { ReactComponent as Android } from '../../assets/android.svg';
-import { ReactComponent as ArrowLeft } from '../../assets/arrowLeft.svg';
-import { ReactComponent as ArrowRight } from '../../assets/arrowRight.svg';
+import ButtonSlider from 'components/ButtonSlider';
+import { ReactComponent as Apple } from 'assets/apple.svg';
+import { ReactComponent as Android } from 'assets/android.svg';
+import { ReactComponent as ArrowLeft } from 'assets/arrowLeft.svg';
+import { ReactComponent as ArrowRight } from 'assets/arrowRight.svg';
 import dataHero from 'data/dataHero.json';
 import {
   StyledSection,
@@ -18,8 +20,9 @@ import {
   AvailableText,
   StoreLinkWrapper,
   StoreLink,
-  ButtonSliderLeft,
-  ButtonSliderRight,
+  ButtonSliderWrapper,
+  // ButtonSliderLeft,
+  // ButtonSliderRight,
   SlideIndicatorList,
   SlideIndicatorItem,
   SlideIndicator,
@@ -27,6 +30,11 @@ import {
 
 const Hero = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const isMobile = useMedia('(min-width:450px) and (max-width: 767px)');
+  const isTablet = useMedia('(min-width:900px) and (max-width: 1199px)');
+  const isDesktop = useMedia('(min-width: 1390px)');
+
+  const suitableScreen = isMobile || isTablet || isDesktop;
 
   const nextSlide = () => {
     setActiveSlide(prev => (prev + 1 > dataHero.length - 1 ? 0 : prev + 1));
@@ -41,7 +49,7 @@ const Hero = () => {
   };
 
   return (
-    <StyledSection>
+    <StyledSection id="home">
       <Container>
         <HeroWrapper>
           <MainTitle>Bazinger</MainTitle>
@@ -56,15 +64,40 @@ const Hero = () => {
           <AvailableStoreWrapper>
             <AvailableText>Available on:</AvailableText>
             <StoreLinkWrapper>
-              <StoreLink href="https://www.apple.com">
+              <StoreLink href="https://www.apple.com" rel="noopener noreferrer">
                 <Apple />
               </StoreLink>
-              <StoreLink href="https://play.google.com/store/apps?hl=ru&gl=US&pli=1">
+              <StoreLink
+                href="https://play.google.com/store/apps?hl=ru&gl=US&pli=1"
+                rel="noopener noreferrer"
+              >
                 <Android />
               </StoreLink>
             </StoreLinkWrapper>
           </AvailableStoreWrapper>
         </HeroWrapper>
+        <ButtonSliderWrapper style={{ marginBottom: suitableScreen && '0' }}>
+          <ButtonSlider
+            style={{
+              position: suitableScreen && 'absolute',
+              top: suitableScreen && '40px',
+              left: suitableScreen && '-70px',
+            }}
+            onChange={prevSlide}
+          >
+            <ArrowLeft />
+          </ButtonSlider>
+          <ButtonSlider
+            style={{
+              position: suitableScreen && 'absolute',
+              top: suitableScreen && '40px',
+              right: suitableScreen && '-70px',
+            }}
+            onChange={nextSlide}
+          >
+            <ArrowRight />
+          </ButtonSlider>
+        </ButtonSliderWrapper>
         <SlideIndicatorList>
           {dataHero.map(({ id }, idx) => (
             <SlideIndicatorItem key={id}>
@@ -79,13 +112,6 @@ const Hero = () => {
             </SlideIndicatorItem>
           ))}
         </SlideIndicatorList>
-
-        <ButtonSliderLeft type="button" onClick={() => prevSlide()}>
-          <ArrowLeft />
-        </ButtonSliderLeft>
-        <ButtonSliderRight type="button" onClick={() => nextSlide()}>
-          <ArrowRight />
-        </ButtonSliderRight>
       </Container>
     </StyledSection>
   );

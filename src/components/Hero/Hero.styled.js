@@ -1,14 +1,26 @@
 import styled from 'styled-components';
-import heroBackgroundImg from 'assets/Layer_1x.jpg';
 import { breakpoints } from 'services/mixins/mixins';
 
 export const StyledSection = styled.section`
+  position: relative;
   padding-top: 100px;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-image: url(${heroBackgroundImg});
+  background-color: #2f303a;
+
+  & > picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  & > picture > img {
+    height: 100%;
+    object-fit: cover;
+  }
 
   @media ${breakpoints.onlyTablet} {
     padding-top: 150px;

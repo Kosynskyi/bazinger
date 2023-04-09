@@ -3,6 +3,9 @@ import { useMedia } from 'react-use';
 import ReactPlayer from 'react-player/youtube';
 import Container from 'components/Container';
 import Modal from 'components/Modal';
+import ImageLazyComponent from 'components/LazyBackgroundImg';
+import VideoBackgroundImg from 'assets/background_video_1x.jpg';
+import VideoBackgroundImg2x from 'assets/background_video_2x@2x.jpg';
 import { ReactComponent as PlayIcon } from '../../assets/play-icon.svg';
 import {
   StyledSection,
@@ -27,6 +30,13 @@ const Video = () => {
 
   return (
     <StyledSection id="video">
+      <ImageLazyComponent
+        srcSetJpg={VideoBackgroundImg}
+        srcSetJpg2x={VideoBackgroundImg2x}
+        src={VideoBackgroundImg}
+        width="1480"
+        alt="video background"
+      />
       <Container>
         {isOpenModal && (
           <Modal closeModal={closeModal}>

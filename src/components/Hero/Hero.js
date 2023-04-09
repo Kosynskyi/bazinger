@@ -2,10 +2,14 @@ import { useState } from 'react';
 import { useMedia } from 'react-use';
 import Container from 'components/Container';
 import ButtonSlider from 'components/ButtonSlider';
+import ImageLazyComponent from 'components/LazyBackgroundImg';
+import HeroBackgroundImg from 'assets/hero_1x.jpg';
+import HeroBackgroundImg2x from 'assets/hero_2x@2x.jpg';
 import { ReactComponent as Apple } from 'assets/apple.svg';
 import { ReactComponent as Android } from 'assets/android.svg';
 import { ReactComponent as ArrowLeft } from 'assets/arrowLeft.svg';
 import { ReactComponent as ArrowRight } from 'assets/arrowRight.svg';
+
 import dataHero from 'data/dataHero.json';
 import {
   StyledSection,
@@ -21,8 +25,6 @@ import {
   StoreLinkWrapper,
   StoreLink,
   ButtonSliderWrapper,
-  // ButtonSliderLeft,
-  // ButtonSliderRight,
   SlideIndicatorList,
   SlideIndicatorItem,
   SlideIndicator,
@@ -50,6 +52,12 @@ const Hero = () => {
 
   return (
     <StyledSection id="home">
+      <ImageLazyComponent
+        srcSetJpg={HeroBackgroundImg}
+        srcSetJpg2x={HeroBackgroundImg2x}
+        src={HeroBackgroundImg}
+        alt="hero background"
+      />
       <Container>
         <HeroWrapper>
           <MainTitle>Bazinger</MainTitle>

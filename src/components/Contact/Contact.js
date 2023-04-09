@@ -1,5 +1,8 @@
 import { useForm } from 'react-hook-form';
 import Container from 'components/Container';
+import ImageLazyComponent from 'components/LazyBackgroundImg';
+import MapBackgroundImg from 'assets/map_1x.jpg';
+import MapBackgroundImg2x from 'assets/map_2x@2x.jpg';
 import {
   StyledSection,
   FormWrapper,
@@ -22,6 +25,12 @@ const Contact = () => {
 
   return (
     <StyledSection id="contact">
+      <ImageLazyComponent
+        srcSetJpg={MapBackgroundImg}
+        srcSetJpg2x={MapBackgroundImg2x}
+        src={MapBackgroundImg}
+        alt="map background"
+      />
       <Container>
         <FormWrapper>
           <Title>Contact</Title>

@@ -1,16 +1,29 @@
 import styled from 'styled-components';
-import VideoBackgroundImg from 'assets/background_video_1x.jpg';
 import { breakpoints } from 'services/mixins/mixins';
 
 export const StyledSection = styled.section`
+  position: relative;
   padding-top: 60px;
   padding-bottom: 45px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-image: url(${VideoBackgroundImg});
-  width: 100%;
   border-bottom: 3px solid rgb(255, 255, 255);
+  background-color: #2f303a;
+
+  & > picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    object-fit: cover;
+  }
+
+  & > picture > img {
+    height: 100%;
+    object-fit: cover;
+  }
 
   @media ${breakpoints.onlyTablet} {
     padding-top: 120px;

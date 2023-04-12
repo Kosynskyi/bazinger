@@ -11,6 +11,8 @@ export const MobileNavigationWrapper = styled.div`
   background-color: rgba(0, 0, 0, 0.9);
   pointer-events: initial;
   visibility: visible;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(100%);
 `;
 
 export const LogoWrapper = styled.div`

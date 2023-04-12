@@ -7,21 +7,27 @@ import {
   LogoWrapper,
 } from './MobileNavigation.styled';
 
-const MobileNavigation = ({ setOpen }) => {
+const MobileNavigation = ({ open, setOpen }) => {
   const closeMenu = () => {
     setOpen(prev => !prev);
   };
 
   return (
-    <MobileNavigationWrapper>
-      <LogoWrapper>
-        <Logo />
-      </LogoWrapper>
-      <UserNav closeMobileMenu={closeMenu} />
-      <ButtonCloseMenu type="button" onClick={closeMenu}>
-        <GrClose size="24px" />
-      </ButtonCloseMenu>
-    </MobileNavigationWrapper>
+    <>
+      <MobileNavigationWrapper
+        style={{
+          transform: open && 'translateX(0)',
+        }}
+      >
+        <LogoWrapper>
+          <Logo />
+        </LogoWrapper>
+        <UserNav closeMobileMenu={closeMenu} />
+        <ButtonCloseMenu type="button" onClick={closeMenu}>
+          <GrClose size="24px" />
+        </ButtonCloseMenu>
+      </MobileNavigationWrapper>
+    </>
   );
 };
 

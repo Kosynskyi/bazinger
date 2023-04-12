@@ -101,6 +101,10 @@ export const SubText = styled.p`
 export const PictureWrapper = styled.div`
   position: relative;
   margin-bottom: 24px;
+
+  & > picture > span {
+    width: 100%;
+  }
 `;
 
 export const SubTextWrapper = styled.div`

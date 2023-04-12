@@ -46,7 +46,7 @@ const Header = () => {
             <ButtonBurger type="button" onClick={() => openBurgerMenu()}>
               <GiHamburgerMenu size="24px" />
             </ButtonBurger>
-            {menuOpen && <MobileNavigation setOpen={setMenuOpen} />}
+            <MobileNavigation open={menuOpen} setOpen={setMenuOpen} />
           </Thumb>
         )}
       </Container>

@@ -13,21 +13,19 @@ const MobileNavigation = ({ open, setOpen }) => {
   };
 
   return (
-    <>
-      <MobileNavigationWrapper
-        style={{
-          transform: open && 'translateX(0)',
-        }}
-      >
-        <LogoWrapper>
-          <Logo />
-        </LogoWrapper>
-        <UserNav closeMobileMenu={closeMenu} />
-        <ButtonCloseMenu type="button" onClick={closeMenu}>
-          <GrClose size="24px" />
-        </ButtonCloseMenu>
-      </MobileNavigationWrapper>
-    </>
+    <MobileNavigationWrapper
+      style={{
+        transform: open && 'translateX(0)',
+      }}
+    >
+      <LogoWrapper>
+        <Logo />
+      </LogoWrapper>
+      <UserNav closeMobileMenu={closeMenu} />
+      <ButtonCloseMenu type="button" onClick={closeMenu}>
+        <GrClose size="24px" />
+      </ButtonCloseMenu>
+    </MobileNavigationWrapper>
   );
 };
 

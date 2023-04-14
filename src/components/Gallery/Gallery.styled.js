@@ -36,66 +36,48 @@ export const Text = styled.p`
 `;
 
 export const GalleryList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
 
   @media ${breakpoints.onlyTablet} {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media ${breakpoints.desktop} {
-    flex-direction: row;
+    grid-template-columns: repeat(4, 1fr);
   }
 `;
 
-export const GalleryItem = styled.li`
-  margin-bottom: 20px;
+export const GalleryItem = styled.li``;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  @media ${breakpoints.onlyTablet} {
-    margin: 0;
-    margin-bottom: 40px;
-    width: 40%;
-
-    &:nth-last-child(-n + 2) {
-      margin-bottom: 0;
-    }
-  }
-
-  @media ${breakpoints.desktop} {
-    width: 270px;
-    margin: 0;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-`;
-
-export const GalletySubTitle = styled.h3`
+export const GallerySubTitle = styled.h3`
   position: absolute;
-  bottom: 10px;
-  width: 100%;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
   font-weight: ${props => props.theme.fontWeights.bold};
   font-size: 15px;
   color: ${props => props.theme.colors.primary};
   text-transform: uppercase;
-  text-align: center;
 `;
 
 export const SubText = styled.p`
   font-weight: ${props => props.theme.fontWeights.regular};
-  font-size: 13px;
+  font-size: 20px;
   color: rgb(131, 131, 131);
   line-height: 1.7;
   text-align: center;
+
+  @media ${breakpoints.onlyTablet} {
+    font-size: 18px;
+  }
+
+  @media ${breakpoints.desktop} {
+    font-size: 13px;
+  }
 `;
 
 export const PictureWrapper = styled.div`
@@ -114,9 +96,9 @@ export const SubTextWrapper = styled.div`
 
 export const ButtonAdd = styled.button`
   position: absolute;
-  top: 80px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;

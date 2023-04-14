@@ -12,7 +12,7 @@ import {
   Text,
   GalleryList,
   GalleryItem,
-  GalletySubTitle,
+  GallerySubTitle,
   SubText,
   PictureWrapper,
   SubTextWrapper,
@@ -43,7 +43,7 @@ const Gallery = () => {
               <ButtonAdd type="button" aria-label="button add screen shot">
                 <AddScreenShot />
               </ButtonAdd>
-              <GalletySubTitle>screen shot #1</GalletySubTitle>
+              <GallerySubTitle>screen shot #1</GallerySubTitle>
             </PictureWrapper>
             <SubTextWrapper>
               <SubText>{subText}</SubText>
@@ -60,7 +60,7 @@ const Gallery = () => {
                   effect="blur"
                 />
               </picture>
-              <GalletySubTitle>screen shot #2</GalletySubTitle>
+              <GallerySubTitle>screen shot #2</GallerySubTitle>
             </PictureWrapper>
             <SubTextWrapper>
               <SubText>{subText}</SubText>
@@ -77,7 +77,7 @@ const Gallery = () => {
                   effect="blur"
                 />
               </picture>
-              <GalletySubTitle>screen shot #3</GalletySubTitle>
+              <GallerySubTitle>screen shot #3</GallerySubTitle>
             </PictureWrapper>
             <SubTextWrapper>
               <SubText>{subText}</SubText>
@@ -94,7 +94,7 @@ const Gallery = () => {
                   effect="blur"
                 />
               </picture>
-              <GalletySubTitle>screen shot #4</GalletySubTitle>
+              <GallerySubTitle>screen shot #4</GallerySubTitle>
             </PictureWrapper>
             <SubTextWrapper>
               <SubText>{subText}</SubText>

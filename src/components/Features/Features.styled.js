@@ -28,19 +28,18 @@ export const Text = styled.p`
 `;
 
 export const FeaturesList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
 
   @media ${breakpoints.onlyTablet} {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media ${breakpoints.desktop} {
-    flex-direction: row;
+    grid-template-columns: repeat(4, 1fr);
   }
 `;
 
@@ -63,12 +62,7 @@ export const FeaturesItem = styled.li`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
   cursor: pointer;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
 
   &:hover > div {
     background-color: ${props => props.theme.colors.secondaryTitle};
@@ -77,40 +71,37 @@ export const FeaturesItem = styled.li`
   &:hover > h3 {
     color: ${props => props.theme.colors.primary};
   }
-
-  @media ${breakpoints.onlyTablet} {
-    margin: 0;
-    margin-bottom: 40px;
-    width: 40%;
-
-    &:nth-last-child(-n + 2) {
-      margin-bottom: 0;
-    }
-  }
-
-  @media ${breakpoints.desktop} {
-    margin: 0;
-    margin-right: 69px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
 `;
 
 export const SubTitle = styled.h3`
   margin-bottom: 26px;
   font-weight: ${props => props.theme.fontWeights.bold};
-  font-size: 15px;
+  font-size: 20px;
   color: ${props => props.theme.colors.secondaryTitle};
   text-transform: uppercase;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media ${breakpoints.onlyTablet} {
+    font-size: 18px;
+  }
+
+  @media ${breakpoints.desktop} {
+    font-size: 15px;
+  }
 `;
 
 export const SubText = styled.p`
   font-weight: ${props => props.theme.fontWeights.regular};
-  font-size: 13px;
+  font-size: 20px;
   line-height: 1.7;
   color: rgba(131, 131, 131);
   text-align: center;
+
+  @media ${breakpoints.onlyTablet} {
+    font-size: 18px;
+  }
+
+  @media ${breakpoints.desktop} {
+    font-size: 13px;
+  }
 `;

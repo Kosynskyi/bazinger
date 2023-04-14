@@ -10,7 +10,7 @@ export const MobileNavigationWrapper = styled.div`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.9);
   pointer-events: initial;
-  visibility: visible;
+  visibility: hidden;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateX(100%);
 `;

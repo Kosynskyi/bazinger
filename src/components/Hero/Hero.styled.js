@@ -34,15 +34,16 @@ export const StyledSection = styled.section`
 export const HeroWrapper = styled.div`
   margin-left: auto;
   padding-bottom: 30px;
+  max-width: 400px;
 
   @media ${breakpoints.onlyTablet} {
     padding-bottom: 40px;
-    width: 450px;
+    max-width: 550px;
   }
 
   @media ${breakpoints.desktop} {
     padding-bottom: 80px;
-    width: 673px;
+    max-width: 673px;
   }
 `;
 
@@ -105,11 +106,13 @@ export const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
   margin-bottom: 36px;
 
+  & > button:first-child {
+    margin-right: 15px;
+  }
+
   @media ${breakpoints.onlyTablet} {
-    justify-content: space-between;
     width: 100%;
   }
 
@@ -117,6 +120,10 @@ export const ButtonWrapper = styled.div`
     justify-content: space-between;
     margin-bottom: 48px;
     width: 430px;
+
+    & > button {
+      margin-right: 0;
+    }
   }
 `;
 

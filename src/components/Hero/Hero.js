@@ -32,11 +32,7 @@ import {
 
 const Hero = () => {
   const [activeSlide, setActiveSlide] = useState(0);
-  const isMobile = useMedia('(min-width:450px) and (max-width: 767px)');
-  const isTablet = useMedia('(min-width:900px) and (max-width: 1199px)');
-  const isDesktop = useMedia('(min-width: 1390px)');
-
-  const suitableScreen = isMobile || isTablet || isDesktop;
+  const isNarrow = useMedia('(min-width: 1360px)');
 
   const nextSlide = () => {
     setActiveSlide(prev => (prev + 1 > dataHero.length - 1 ? 0 : prev + 1));
@@ -93,12 +89,12 @@ const Hero = () => {
             </StoreLinkWrapper>
           </AvailableStoreWrapper>
         </HeroWrapper>
-        <ButtonSliderWrapper style={{ marginBottom: suitableScreen && '0' }}>
+        <ButtonSliderWrapper style={{ marginBottom: isNarrow && '0' }}>
           <ButtonSlider
             style={{
-              position: suitableScreen && 'absolute',
-              top: suitableScreen && '40px',
-              left: suitableScreen && '-70px',
+              position: isNarrow && 'absolute',
+              top: isNarrow && '40px',
+              left: isNarrow && '-70px',
             }}
             onChange={prevSlide}
             aria-label="button left"
@@ -107,9 +103,9 @@ const Hero = () => {
           </ButtonSlider>
           <ButtonSlider
             style={{
-              position: suitableScreen && 'absolute',
-              top: suitableScreen && '40px',
-              right: suitableScreen && '-70px',
+              position: isNarrow && 'absolute',
+              top: isNarrow && '40px',
+              right: isNarrow && '-70px',
             }}
             onChange={nextSlide}
             aria-label="button right"

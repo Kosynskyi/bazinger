@@ -1,4 +1,4 @@
-import {useEffect} from "react"
+import { useEffect } from 'react';
 import { GrClose } from 'react-icons/gr';
 import Logo from 'components/Logo';
 import UserNav from 'components/UserNav';
@@ -23,6 +23,7 @@ const MobileNavigation = ({ open, setOpen }) => {
     <MobileNavigationWrapper
       style={{
         transform: open && 'translateX(0)',
+        visibility: open && 'visible',
       }}
     >
       <LogoWrapper>

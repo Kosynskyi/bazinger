@@ -1,3 +1,4 @@
+import {useEffect} from "react"
 import { GrClose } from 'react-icons/gr';
 import Logo from 'components/Logo';
 import UserNav from 'components/UserNav';
@@ -11,6 +12,12 @@ const MobileNavigation = ({ open, setOpen }) => {
   const closeMenu = () => {
     setOpen(prev => !prev);
   };
+
+  useEffect(() => {
+    open
+      ? (window.document.body.style.overflow = 'hidden')
+      : (window.document.body.style.overflow = 'visible');
+  }, [open]);
 
   return (
     <MobileNavigationWrapper
